@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+  get 'posts/show_all'
+
+  get 'posts/show_by_category'
+
+  get 'posts/show'
+
+  get 'posts/write'
+
+  get 'posts/write_done'
+
+  get 'posts/edit'
+
+  get 'posts/edit_done'
+
+  get 'posts/delete_done'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
