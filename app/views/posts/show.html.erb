@@ -1,2 +1,17 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<%#<h1>Posts#show</h1>%>
+<%#<p>Find me in app/views/posts/show.html.erb</p>%>
+<p><%= flash[:alert] %></p>
+<h2>Restaurant Information</h2>
+
+<div>
+    <h4>Title: <%= @post.title %></h4>
+    <p>Category: <%= @post.category %></p>
+
+    <p>Content: <br /><br /><%= @post.content %></p><br />
+
+    <a href="/posts/write">New</a> | 
+    <a href="/posts/edit/<%= @post.id %>">Edit</a> | 
+    <a href="/posts/delete_done/<%= @post.id %>">Delete</a> | 
+    <a href=:back>Return</a> 
+    <a href="/">Show all</a>
+</div>

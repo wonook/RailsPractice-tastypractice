@@ -1,2 +1,13 @@
-<h1>Posts#show_all</h1>
-<p>Find me in app/views/posts/show_all.html.erb</p>
+<%#<h1>Posts#show_all</h1>%>
+<%#<p>Find me in app/views/posts/show_all.html.erb</p>%>
+<h2><%= flash[:alert] %></h2>
+
+<div>
+    <h2>Welcome to TastySeoul!</h2>
+    <p>Feel free to share your favorite restaurants!</p>
+</div>
+
+<hr />
+
+<%= render :partial => "posts/show_multiple" %>
+

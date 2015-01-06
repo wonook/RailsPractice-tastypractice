@@ -1,2 +1,19 @@
-<h1>Posts#write</h1>
-<p>Find me in app/views/posts/write.html.erb</p>
+<%#<h1>Posts#write</h1>%>
+<%#<p>Find me in app/views/posts/write.html.erb</p>%>
+
+<p><%= flash[:alert] %></p>
+<h2>Add a new restaurant.</h2>
+
+<form action="/posts/write_done" method="post">
+    <p>Category:
+        <select name="post_category">
+            <option value="Korean">Korean</option>
+            <option value="Japanese">Japanes</option>
+            <option value="Chinese">Chinese</option>
+            <option value="Western">Western</option>
+        </select>
+    </p>
+    <p>Title: <input type="text" name="post_title" placeholder="Enter a title.." /></p>
+    <p>Content: <textarea name="post_content" rows="8" cols="40"></textarea></p>
+    <input type="submit" value="Submit" />
+</form>

@@ -1,2 +1,22 @@
-<h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+<%#<h1>Posts#edit</h1>%>
+<%#<p>Find me in app/views/posts/edit.html.erb</p>%>
+
+<h2>Edit Information</h2>
+
+<div>
+    <form action="/posts/edit_done" method="post">
+        <input type="hidden" name="id" value="<%= @post.id %>" />
+        <p>Category:
+            <select name="post_category">
+                <option value="Korean">Korean</option>
+                <option value="Japanese">Japanese</option>
+                <option value="Chinese">Chinese</option>
+                <option value="Western">Western</option>
+            </select>
+        </p>
+        <p>Title: <input type="text" name="post_title" value="<%= @post.title %>" /></p>
+        <p>Content: <textarea name="post_content" rows="8" cols="40"></textarea></p>
+        <input type="submit" value="Edit" />
+        <a href=:back">Cancel</a>
+    </form>
+</div>

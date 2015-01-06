@@ -1,0 +1,9 @@
+<% @posts.reverse.each do |p| %>
+<div>
+    <h4><a href="/posts/show/<%= p.id %>"><%= p.title %></a></h4>
+    <p><%= p.category %></p>
+    <p><%= p.user_id %></p>
+    <p><%= p.content %></p>
+    
+</div>
+<% end %>
