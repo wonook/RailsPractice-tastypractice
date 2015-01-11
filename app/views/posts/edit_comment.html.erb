@@ -1,0 +1,10 @@
+
+<h2>Edit Comment</h2>
+
+<div>
+    <form action="/posts/edit_comment_done" method="post">
+        <input type=hidden" name="id" value="<%= @comment.id %>" />
+        <p>Content: <textarea name="comment_content" id="" rows="8" cols="40"><%= @comment.content %></textarea></p>
+        <input type="submit" value="Edit" />
+    </form>
+</div>

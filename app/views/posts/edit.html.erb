@@ -7,7 +7,7 @@
     <form action="/posts/edit_done" method="post">
         <input type="hidden" name="id" value="<%= @post.id %>" />
         <p>Category:
-            <select name="post_category">
+            <select name="post_category" value="<%= @post.category %>">
                 <option value="Korean">Korean</option>
                 <option value="Japanese">Japanese</option>
                 <option value="Chinese">Chinese</option>
@@ -15,8 +15,7 @@
             </select>
         </p>
         <p>Title: <input type="text" name="post_title" value="<%= @post.title %>" /></p>
-        <p>Content: <textarea name="post_content" rows="8" cols="40"></textarea></p>
+        <p>Content: <textarea name="post_content" rows="8" cols="40"><%= @post.content %></textarea></p>
         <input type="submit" value="Edit" />
-        <a href=:back">Cancel</a>
     </form>
 </div>

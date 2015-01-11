@@ -1,2 +1,9 @@
 
-<h4><a href="/">TASTYSEOUL: FIND RESTAURANTS</a> || <a href="Korean">Korean</a> || <a href="Japanese">Japanese</a> || <a href="Chinese">Chinese</a> || <a href="Western">Western</a>|| <a href="/posts/write">New Content</a></h4>
+<h4><a href="/">TASTYSEOUL: FIND RESTAURANTS</a> || <a href="Korean">Korean</a> || <a href="Japanese">Japanese</a> || <a href="Chinese">Chinese</a> || <a href="Western">Western</a>|| <a href="/posts/write">New Content</a> ||| 
+<% if session[:user_id].nil? %>
+<a href="/users/signup">Sign Up</a> || <a href="/users/login">Log In</a> 
+<% else %>
+Welcome, <%= User.find(session[:user_id]).username %>
+ | <a href="/users/logout">Log Out</a>
+<% end %>
+</h4>

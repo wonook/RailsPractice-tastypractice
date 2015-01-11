@@ -1,0 +1,12 @@
+<%#<h1>Users#signup</h1>%>
+<%#<p>Find me in app/views/users/signup.html.erb</p>%>
+
+<p><%= flash[:alert] %></p>
+<h2>Sign Up</h2>
+
+<form action="/users/signup_done" method="post">
+    <p>ID: <input type="text" name="user_id" value="" placeholder="enter ID" /></p>
+    <p>Password: <input type="password" name="user_password" value="" placeholder="must be over 6 characters" /></p>
+    <p>Retype: <input type="password" name="retype_password" value="" placeholder="retype password" /></p>
+    <input type="submit" value="Submit" />
+</form>

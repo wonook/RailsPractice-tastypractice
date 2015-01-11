@@ -18,3 +18,12 @@ categories.each do |c|
         p.save
     end
 end
+
+users = ["Mike", "Charles", "Adam", "Matthew", "Peter", "Julia", "Salome", "Angelique", "Kaitlyn"]
+
+users.each do |u|
+    usr = User.new
+    usr.username = u
+    usr.password = u + u
+    usr.save
+end

@@ -5,6 +5,7 @@
 
 <div>
     <h4>Title: <%= @post.title %></h4>
+    <p>Author: <%= User.find(@post.user_id).username %></p>
     <p>Category: <%= @post.category %></p>
 
     <p>Content: <br /><br /><%= @post.content %></p><br />
@@ -12,6 +13,19 @@
     <a href="/posts/write">New</a> | 
     <a href="/posts/edit/<%= @post.id %>">Edit</a> | 
     <a href="/posts/delete_done/<%= @post.id %>">Delete</a> | 
-    <a href=:back>Return</a> 
+
+    <hr />
+
+    <% @post.comments.each do |c| %>
+        <p><strong><%= User.find(c.user_id).username %></strong>: "<%= c.content %>"</p>
+        <a href="/posts/edit_comment/<%= c.id %>">Edit comment</a>
+        <a href="/posts/delete_comment_done/<%= c.id %>">Delete comment</a>
+    <% end %>
+    
+    <form action="/posts/write_comment_done" method="post">
+        <input type="hidden" name="post_id" value="<%= @post.id %>" />
+        <p><%= User.find(session[:user_id]).username %>: <input type="text" name="comment_content" value="" placeholder="Enter a comment.." /><input type="submit" value="Submit" /></p>
+    </form>
+
     <a href="/">Show all</a>
 </div>

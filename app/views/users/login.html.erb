@@ -1,0 +1,13 @@
+<%#<h1>Users#login</h1>%>
+<%#<p>Find me in app/views/users/login.html.erb</p>%>
+
+<p><%= flash[:alert] %></p>
+<h2>Log in</h2>
+
+<div>
+    <form action="/users/login_done" method="post">
+        <p>ID: <input type="text" name="user_username" value="" placeholer="Enter your iD" /></p>
+        <p>Password: <input type="password" name="user_password" value="" placeholder="Enter your password" /></p>
+        <input type="submit" value="Login" />
+    </form>
+</div>

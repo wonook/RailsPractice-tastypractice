@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'users/signup'
+  post 'users/signup_done'
+
+  get 'users/login'
+  post 'users/login_done'
+
+  get 'users/logout'
+
   get 'posts/show_all'
 
   get 'posts/show/:id' => 'posts#show'
@@ -11,6 +19,14 @@ Rails.application.routes.draw do
 
   get 'posts/delete_done/:id' => 'posts#delete_done'
 
+  post 'posts/write_comment_done'
+
+  get 'posts/edit_comment/:id' => 'posts#edit_comment'
+  post 'posts/edit_comment_done'
+
+  get 'posts/delete_comment_done/:id' => 'posts#delete_comment_done'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -21,6 +37,7 @@ Rails.application.routes.draw do
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
   get '/:category' => 'posts#show_by_category'
+  get '/posts/:category' => 'posts#show_by_category'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
