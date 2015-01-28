@@ -46,7 +46,8 @@ class UsersController < ApplicationController
   end
 
   def logout
-    session.delete(:user_id)
+    #session.delete(:user_id)
+    reset_session #this is how you delete a session!!
     flash[:alert] = "Logout complete"
     redirect_to :back
   end

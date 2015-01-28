@@ -22,12 +22,14 @@ class PostsController < ApplicationController
     category = params[:post_category]
     title = params[:post_title]
     content = params[:post_content]
+    image = params[:image]
 
     p = Post.new
     p.title = title
     p.category = category
     p.content = content
     p.user_id = session[:user_id] 
+    p.image = image
 
     if p.save
         flash[:alert] = "Saved."

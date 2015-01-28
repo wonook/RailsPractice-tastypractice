@@ -4,6 +4,7 @@
 <h2>Restaurant Information</h2>
 
 <div>
+    <p><img src="<%= @post.image_url(:medium) %>" /></p>
     <h4>Title: <%= @post.title %></h4>
     <p>Author: <%= User.find(@post.user_id).username %></p>
     <p>Category: <%= @post.category %></p>

@@ -4,4 +4,5 @@ class Post < ActiveRecord::Base
 
     validates :title, presence: {message: "It must have a title"}
     validates :category, inclusion: {in: ["Korean", "Japanese", "Chinese", "Western"], message: "Please select among the choices."}
+    mount_uploader :image, ImageUploader
 end

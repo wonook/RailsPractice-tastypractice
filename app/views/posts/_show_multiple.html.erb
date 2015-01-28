@@ -1,5 +1,6 @@
 <% @posts.reverse.each do |p| %>
 <div>
+    <p><img src="<%= p.image_url(:thumb) %>" /></p>
     <h4><a href="/posts/show/<%= p.id %>"><%= p.title %></a></h4>
     <p><%= p.category %></p>
     <p><%= p.user_id %></p>
